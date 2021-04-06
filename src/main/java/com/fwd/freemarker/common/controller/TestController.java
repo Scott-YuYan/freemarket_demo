@@ -5,6 +5,7 @@ import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
@@ -45,24 +46,13 @@ public class TestController {
         Writer writer = new OutputStreamWriter(
                 new FileOutputStream(resultFile), StandardCharsets.UTF_8.displayName());
         template.process(root, writer);
-        System.out.println("模板创建成功");
         writer.flush();
         writer.close();
     }
 
     @RequestMapping("/index")
-    public String freemarkerIndex() throws IOException, TemplateException {
-        Configuration configuration = freeMarkerConfigurer.getConfiguration();
-        Template template = configuration.getTemplate("freemarker.ftl");
-        Map<String, Object> root = new HashMap<>();
-        root.put("name", "zhangsan");
-        File resultFile = new File("C:\\Users\\ZR-YY\\Desktop\\outDir\\index.html");
-        Writer writer = new OutputStreamWriter(
-                new FileOutputStream(resultFile), StandardCharsets.UTF_8.displayName());
-        template.process(root, writer);
-        System.out.println("模板创建成功");
-        writer.flush();
-        writer.close();
+    public String freemarkerIndex(ModelMap modelMap) throws IOException, TemplateException {
+        modelMap.addAttribute("name","魏建国");
         return "freemarker";
     }
 
