@@ -23,5 +23,7 @@
 hs_err_pid*
 
 .idea/*
+src/main/resources/templates/.cache/*
+src/main/resources/templates/dist/*
 
 target/*

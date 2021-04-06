@@ -1,7 +1,6 @@
 package com.fwd.policy.dao;
 
 import com.fwd.policy.domain.BeforehandPolicyVo;
-import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
