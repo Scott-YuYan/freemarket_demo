@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@MapperScan("com.fwd.*.dao")
+@MapperScan("com.fwd.policy.dao")
 public class MyApplication {
 
     public static void main(String[] args) {

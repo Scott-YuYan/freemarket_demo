@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.fwd.policy.dao.PolicyPayMapperDao">
+    <select id="queryAllPolicyPay" resultType="com.fwd.policy.domain.BeforehandPolicyVo">
+        select id,case_type,`current_date`,branch_code,org_code from t_policy_pay
+    </select>
+</mapper>

@@ -16,7 +16,7 @@ import java.io.Serializable;
 public class BeforehandPolicyVo implements Serializable {
     private static final long serialVersionUID = 4402734148375799281L;
 
-    private String id;
+    private int id;
 
     private String caseType;//保障类型(代码、值)（寿险、重疾、意外）
 
